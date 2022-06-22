@@ -12,12 +12,12 @@ You are to report back all your findings to both the SOC manager and the Enginee
 # Report
 
 This report contains two parts: 
-- A resume of the findings
-- A detailed walkthrough of the gathering information process  
+- **Resume:** A resume of the findings
+- **Walkthrough:** detailed walkthrough of the gathering information process  
 
->## **Resume**
+## **Resume**
 
-## Time Thieves
+#### Time Thieves
 
 - Domain name of the users' custom site: `frank-n-ted.com`
 
@@ -27,7 +27,9 @@ This report contains two parts:
 
 - Malware classification by VirusTotal.com: `Trojan`
 
-## Vulnerable Windows Machine
+---
+
+#### Vulnerable Windows Machine
 
 Infected Windows machine:
 
@@ -47,7 +49,7 @@ Infected Windows machine:
 
 ---
 
-## Illegal Downloads
+#### Illegal Downloads
 
 machine with IP address 10.0.0.201:
 
@@ -60,14 +62,17 @@ machine with IP address 10.0.0.201:
 Downloaded torrent file: `Betty_Boop_Rhythm_on_the_Reservation.avi.torrent`
 
 ***
+***
 
->## **WalkThrough**
+## **Walkthrough**
 
 Used Tools: ***Wireshark***
 
-File: [pcap.pcap](Resources/3/pcap.pcap)
+File: Use the next command to download the file
 
-##### Note: Wireshark and tcpreplay were use to create the file
+		curl -L -o pcap.pcap http://tinyurl.com/yaajh8o8
+
+##### Note: Wireshark and tcpreplay were used to create the file. Nevertheless, the file can be downloaded from a third-party link. It is strongly recommended to use a sandbox for this task.
 
 ## Time Thieves
 
