@@ -1,4 +1,4 @@
-# **Walkthrough**(Images/
+# **Walkthrough**(/Images/
 
 ## Overview
 You are working as a Security Engineer for X-CORP, supporting the SOC infrastructure. The SOC analysts have noticed some discrepancies with alerting in the Kibana system and the manager has asked the Security Engineering team to investigate.
@@ -29,7 +29,7 @@ File: Use the next command to download the file
 
 wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
-![2](Images/3/2.png)
+![2](/Images/3/2.png)
  
 **Domain name of the user custom site:** `frank-n-ted.com`
 
@@ -49,7 +49,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - Display filter: `ip.addr == 10.6.12.203`
 
-![3](Images/3/3.png)
+![3](/Images/3/3.png)
 
 **Downloaded file name:** `june11.dll`
 
@@ -63,13 +63,13 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - `Save`
 
-![4](Images/3/4.png)
+![4](/Images/3/4.png)
 
 - Go to virustotal.com
 
 - Upload file
 
-![5](Images/3/5.png)
+![5](/Images/3/5.png)
 
 **Malware is a** `Trojan`
 
@@ -85,7 +85,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - In the middle wireshark screen: `NetBios Name Service / Additional records / Name`
 
-![6](Images/3/6.png)
+![6](/Images/3/6.png)
 
 **Host name:** `ROTTERDAM-PC`
 
@@ -95,7 +95,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - Form the Menu: `view / name resolution / (uncheck) Resolve Network Address`
 
-![7](Images/3/7.png)
+![7](/Images/3/7.png)
 
 **Ip Address** `172.16.4.205`
 
@@ -112,7 +112,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - *Search for username with the new column*
 
-![8](Images/3/8.png)
+![8](/Images/3/8.png)
 
 **Windows User Name:** `matthijs.derives`
 
@@ -121,7 +121,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 4.- IP ADDRESSES
 - From Search: `Ip.addr == 172.16.4.205 and http.request.method ==”POST”`
 
-![9](Images/3/9.png)
+![9](/Images/3/9.png)
 
 **Ip addresses:** `172.16.4.205 - 31.7.62.214 - 185.243.115.84`
 
@@ -131,7 +131,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - In the search bar: `Ip.addr == 172.16.4.205 and and ip.addr == 185.243.115.84 and http.request.method == “POST”`
 
-![10](Images/3/10.png)
+![10](/Images/3/10.png)
 
 - *Copy the name of the file in the info column*
 
@@ -139,11 +139,11 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - *Paste the name of the file in the filter*
 
-![11](Images/3/11.png)
+![11](/Images/3/11.png)
 
 - *Save it and open it*
 
-![12](Images/3/12.png)
+![12](/Images/3/12.png)
 
 ---
 
@@ -156,7 +156,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - In the middle wireshark screen: `Ethernet 2 / Destination / Address`
 
-![13](Images/3/13.png)
+![13](/Images/3/13.png)
 
 **Mac Address:** `00:16:17:18:66:c8`
 
@@ -171,7 +171,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - *Search for username with the new column*
 
-![14](Images/3/14.png)
+![14](/Images/3/14.png)
 
 **Windows User Name:** `elmer.blanco`
 
@@ -182,7 +182,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - In the middle wireshark screen: `Hypertext Transfer Protocol / User Agent`
 
-![15](Images/3/15.png)
+![15](/Images/3/15.png)
 
 **OS version:** `Windows 64 NT 10.0`
 
@@ -194,6 +194,6 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - Filter: ip.addr == 10.0.0.201
 
-![16](Images/3/16.png)
+![16](/Images/3/16.png)
 
 **Torrent:** `Betty_Boop_Rhythm_on_the_Reservation.avi.torrent`

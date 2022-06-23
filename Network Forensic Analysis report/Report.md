@@ -28,7 +28,7 @@ Infected Windows machine:
 
 - Background’s desktop picture of the Windows host:
 
-![1](Images/3/1.png)
+![1](//Images/3/1.png)
    
 ---
 
