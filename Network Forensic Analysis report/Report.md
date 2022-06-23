@@ -28,8 +28,8 @@ Infected Windows machine:
 
 - Background’s desktop picture of the Windows host:
 
-![1](Network Forensic Analysis report/Images/1.png)
-
+![1](Images/3/1.png)
+   
 ---
 
 #### Illegal Downloads
