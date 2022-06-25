@@ -1,4 +1,4 @@
-# **Walkthrough**(/Images/
+# **Forensic Walkthrough**
 
 ## Overview
 You are working as a Security Engineer for X-CORP, supporting the SOC infrastructure. The SOC analysts have noticed some discrepancies with alerting in the Kibana system and the manager has asked the Security Engineering team to investigate.
