@@ -157,7 +157,7 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
 ## SQL database: **Flag 3 and 4**
 
 ```
-Mysql -u root -p
+mysql -u root -p
 mysql> show databases;
 mysql> use wordpress;
 mysql> show tables;
