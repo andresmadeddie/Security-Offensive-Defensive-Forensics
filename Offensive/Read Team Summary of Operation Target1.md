@@ -166,20 +166,6 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
 
 # Alternative methods to access flag 3 and 4
 
-## SQL database: **Flag 3 and 4**
-
-```
-mysql -u root -p
-mysql> show databases;
-mysql> use wordpress;
-mysql> show tables;
-mysql> select * from wp_posts;
-```
-
-  **Flag3 and Flag4**
- 
-![11](/Images/1/11.png)
-
 ## Binary File: **Flag 3**
 
 1. Needs to be Root
@@ -194,6 +180,22 @@ mysql> select * from wp_posts;
 **Flag3**
 
 ![12](/Images/1/12.png)
+
+## SQL database: **Flag 3 and 4**
+
+```
+mysql -u root -p
+mysql> show databases;
+mysql> use wordpress;
+mysql> show tables;
+mysql> select * from wp_posts;
+```
+
+  **Flag3 and Flag4**
+ 
+![11](/Images/1/11.png)
+
+
 
 > Others Exploits:
 CVE-2014-6271 Shellshock vulnerability. It is possible to gain shell access through Remote code execution.
