@@ -154,7 +154,7 @@ wireshark query: `Ip.addr ==10.6.12/24 and bootp`
 
 - If the destination address is the mac address to look for
 
-- In the middle wireshark screen: `Ethernet 2 / Destination / Address`
+- In the middle wireshark screen: `Ethernet II / Destination / Address`
 
 ![13](/Images/3/13.png)
 
