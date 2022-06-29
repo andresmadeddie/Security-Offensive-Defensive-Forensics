@@ -24,8 +24,10 @@ To set the DHCP Server
 
 Open the command Prompt of your machine and go to Virtual Box path.
 
-For windows type: cd /Program Files/Oracle/VirtualBox
+For windows type: 
+
+    cd /Program Files/Oracle/VirtualBox
 
 Then, input
 
-vboxmanage dhcpserver add --network=pentest --server-ip=10.38.1.1 --lower-ip=10.38.1.110 --upper-ip=10.38.1.120 --networkmask=25.255.255.0 enable
+    vboxmanage dhcpserver add --network=Raven --server-ip=192.168.1.1 --lower-ip=192.168.1.100 --upper-ip=192.168.1.120 --netmask=255.255.255.0 --enable 
