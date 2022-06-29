@@ -42,7 +42,13 @@ Tools:
 
 ![1](/Images/2/1.png)
 
-2. Enumerate: `wpscan --url http://192.168.1.110/wordpress -eu`. Likewise, the usernames are easy to guess because of the leads on the website.
+2. Enumerate: 
+
+    `wpscan --url http://192.168.1.110/wordpress -eu`
+
+    Likewise, the usernames are easy to guess because of the leads on the website.
+
+    ![2](/Images/2/wpscan.png)
 
 3. Search with the google developers tool the flag inside the code
 
@@ -68,7 +74,7 @@ Tools:
 
 ![4](/Images/2/4.png)
 
-12. `Cd /var/www/html/wordpress`
+12. `cd /var/www/html/wordpress`
 
 13. `Nano wp-config.php`
 
