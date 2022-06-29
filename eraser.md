@@ -11,8 +11,9 @@ This Pen-testing environment can be recreated in Virtual Box using the following
 
 - [Raven 2 ova-file](https://download.vulnhub.com/raven/Raven2.ova)
 
-Create a DHCP server in Virtual Box
-Note: the links lead to the official's sites of kali Linux and VulnHub
+- Create a DHCP server in Virtual Box
+
+#### Note: the links download the files from the official's sites of kali Linux and VulnHub
 
 Setting the Pentest Lab walkthrough:
 After downloading the three ova files(Virtual Machines) upload them into Virtual Box:
