@@ -31,3 +31,17 @@ For windows type:
 Then, input
 
     vboxmanage dhcpserver add --network=Raven --server-ip=192.168.1.1 --lower-ip=192.168.1.100 --upper-ip=192.168.1.120 --netmask=255.255.255.0 --enable 
+    
+#### Optional: 
+
+To set the machines as the same IP address as this exercise
+
+- Raven 1: 192.168.1.110 
+- Raven 2: 192.168.1.115
+
+Modify the Mac address of the next payload and run them
+
+
+Raven 1: `vboxmanage dhcpserver modify --network=Raven --mac-address=080027BBBDB1 --fixed-address=192.168.1.110`
+
+Raven 2: `vboxmanage dhcpserver modify --network=Raven --mac-address=080027FABB89 --fixed-address=192.168.1.115`
