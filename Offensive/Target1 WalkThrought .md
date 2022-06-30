@@ -48,7 +48,7 @@ Tools:
 
     Likewise, the usernames are easy to guess because of the leads on the website.
 
-    ![2](/Images/2/wpscan.png)
+    ![2](/Images/2/wpscan.PNG)
 
 3. Search with the google developers tool the flag inside the code
 
