@@ -62,9 +62,9 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
     ```
         ssh michael@192.168.1.110
         Password: michael
-        Cd ../../
-        Find -iname “*flag*” 2>/dev/null
-        Cat /var/www/fllag2.txt
+        cd ../../
+        find -iname “*flag*” 2>/dev/null
+        cat /var/www/flag2.txt
     ```
 
     **Flag2**
@@ -121,7 +121,7 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
         mysql> show databases;
         mysql> use wordpress;
         mysql> show tables;
-        mysql> SELECT* FROM wp_posts;
+        mysql> SELECT* FROM wp_users;
         ```
 
         ![5](/Images/1/5.png)

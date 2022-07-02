@@ -110,7 +110,9 @@ Tools:
 
     ![10](/Images/2/10.png)
 
-24. `john hashes.txt –wordlist=’/usr/share/wordlist/rockyou.txt’`
+24. `john hashes.txt -wordlist="/usr/share/wordlists/rockyou.txt"`
+
+    #### If rock you is not descompressed use 'sudo gunzip  /usr/share/wordlists/rockyou.txt.gz' to do it.
 
 25. `john –show hashes.txt`
 
