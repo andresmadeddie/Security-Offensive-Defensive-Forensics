@@ -54,19 +54,19 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
           
      **Flag1**
 
-    ![5](/Images/4/5.png)
+    ![5](/Images/4/5.PNG)
 
     **List of vulnerabilities**
 
-    ![6](/Images/4/6.png)    
+    ![6](/Images/4/6.PNG)    
 
     **phpmailer version**
 
-    ![7](/Images/4/7.png)  
+    ![7](/Images/4/7.PNG)  
 
     4. `searchsploit phpmailer`
 
-     ![8](/Images/4/8.png)  
+     ![8](/Images/4/8.PNG)  
 
     4. `sudo chmod 777 exploit.sh`
 
