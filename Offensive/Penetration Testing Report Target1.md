@@ -16,7 +16,7 @@ Nmap scan results reveals the below services and OS details:
 
 nmap -sV 192.168.1.110
 
-![1](/Images/1/1.png)
+![1](/Resources/Images/1/1.png)
 
 ---
 
@@ -41,13 +41,15 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
 - **CWE-200** Exposure of sensitive Information to an unauthorized actor
     
-    1. On google chrome input the `Url: 192.168.1.110/service.html`
-    2. Right click / view page source code / click on 3 dot menu
-    3. Search: flag1
-
+    Sensitive data was spotted in plain text embedded in the code of the service site. 
+    
+    Exploit:
+    
+    Using Google Chrome developer's Tools on the Url: `192.168.1.110/service.html' give a glance at the exposed sensitive data.
+  
      **Flag1**
 
-    ![2](/Images/1/2.png)
+    ![2](/Resources/Images/2/5.png)
 
 ---
 
@@ -69,7 +71,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
     **Flag2**
 
-    ![3](/Images/1/3.png)
+    ![3](/Resources/Images/2/8.png)
 
 ---
 
@@ -87,7 +89,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
     Password: R@v3nSecurity
     ```
 
-    ![4](/Images/1/4.png)
+    ![4](/Resources/Images/2/9.png)
 
     ```
     mysql -u root -p
@@ -99,7 +101,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
     **Flag3**
 
-    ![11](/Images/1/11.png)  
+    ![11](/Resources/Images/2/22.png)  
 
     >#### note: Flag4 also appears in this exploit.
 
@@ -122,16 +124,16 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
             sudo -l  
         ```
     
-        ![8](/Images/1/8.png)
+        ![8](/Resources/Images/2/16.png)
 
     2. Python Script
     
         sudo python -c 'import pty;pty.spawn("/bin/bash")'
  
-        ![9](/Images/1/9.png)
+        ![9](/Resources/Images/2/17.png)
     
         cat /root/flag4.txt
     
         **Flag4**
 
-        ![10](/Images/1/10.png)
+        ![10](/Resources/Images/2/19.png)
