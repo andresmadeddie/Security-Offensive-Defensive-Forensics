@@ -12,7 +12,7 @@
 
 ## Exposed Services
 
-Nmap scan results reveals the below services and OS details:
+Nmap scan results reveal the below services and OS details:
 
 nmap -sV 192.168.1.110
 
@@ -22,14 +22,14 @@ nmap -sV 192.168.1.110
 
 ## Critical Vulnerabilities
 
-The CVE and CWE databases give us information of vulnerabilities found in the previous step. These vulnerabilities are potential points of entry:
+The CVE and CWE databases give us information on vulnerabilities found in the previous step. These vulnerabilities are potential points of entry:
 
 Vulnerability | Description | Impact
 ---|---|---
-**CWE-200** | Exposure of sensitive Information to an unauthorized actor | Allowing sensitive information to be compromised so easily can result in a breach that can have significant affects on your business
+**CWE-200** | Exposure of sensitive information to an unauthorized actor | Allowing sensitive information to be compromised so easily can result in a breach that can have consequences on your business.
 **CWE-521** | Weak Password Requirements | Not enforcing a password policy allows users to choose passwords that they can easily remember which are not typically secure.
-**CWE-284** | The software does not restrict or incorrectly restricts access to a resource from an unauthorized actor. | A user is able to execute elevated commands when they were not preauthorized to do so
-**CWE-98** | An improper control of filename for include or require statement in PHP allows a LFI allowing remote attackers to execute arbitrary code | An attacker can execute commands on the web server remotely  allowing them to further compromise the target.
+**CWE-284** | The software does not restrict or incorrectly restrict access to a resource from an unauthorized actor. | A user can execute elevated commands when they were not preauthorized to do so
+**CWE-98** | An improper control of filename for include or require statement in PHP allows an LFI allowing remote attackers to execute arbitrary code | An attacker can execute commands on the web server remotely allowing them to further compromise the target.
 
 ---
 
@@ -39,17 +39,19 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
 **flag1.txt:**  `b9bbcb33e11b80be759c4e844862482d`
 
-- **CWE-200** Exposure of sensitive Information to an unauthorized actor
+- **CWE-200** Exposure of sensitive information to an unauthorized actor
     
     Sensitive data was spotted in plain text embedded in the code of the service site. 
     
     Exploit:
     
-    Using Google Chrome developer's Tools on the Url: `192.168.1.110/service.html' give a glance at the exposed sensitive data.
+    |  | **Flag1** |
+    | -- | -- |
+    | Using Google Chrome developer's Tools on the Url: `192.168.1.110/service.html` give a glance at the exposed sensitive data. | ![2](/Resources/Images/2/5.png)
   
-     **Flag1**
+     
 
-    ![2](/Resources/Images/2/5.png)
+    
 
 ---
 
@@ -83,26 +85,9 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
     
     Exploit:
    
-    ```
-    Nano wp-config.php
-    Look down mysql database password
-    mysql -u root -p
-    Password: R@v3nSecurity
-    ```
-
-    ![4](/Resources/Images/2/9.png)
-
-    ```
-    mysql -u root -p
-    mysql> show databases;
-    mysql> use wordpress;
-    mysql> show tables;
-    mysql> select * from wp_posts;
-    ```
-
-    **Flag3**
-
-    ![11](/Resources/Images/2/22.png)  
+    | MySQL Root Password | Flag3 |
+    | -- | -- |
+    | ``nano wp-config.php`` <br /> Password: R@v3nSecurity <br /> <br />![4](/Resources/Images/2/9.png)  | `mysql -u root -p` <br /> Password: R@v3nSecurity <br /> `mysql> show databases;` `mysql> use wordpress;` <br />  `mysql> show tables;` <br /> `mysql> select * from wp_posts;` <br />  <br />![11](/Resources/Images/2/22.png) 
 
     >#### note: Flag4 also appears in this exploit.
 
@@ -112,7 +97,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
 - **CWE-284** Improper Access Control
 
-    Privilege on the system is obtained in this step after cracking the hashed password of a privileged user found in the SQL database. This allows to execute a Python Script that leads to a root access to the system.
+    Privilege on the system is obtained in this step after cracking the hashed password of a privileged user found in the SQL database. This allows the execution of a Python Script that leads to root access to the system.
   
     The user Steven has python root access. This led to a root privilege escalation.
 
