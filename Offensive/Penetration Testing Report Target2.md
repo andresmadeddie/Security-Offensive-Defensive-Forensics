@@ -43,19 +43,17 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
     
     The vendor directory has no restrictions and is accessible through the browser. It includes several sensitive files that leak information about the services in use, their versions, and the critical data `flag1{a2c1f66d28051bd3a5874b5b6r43e21}` in the PATH file.
 
-    **Vendor Directory Index view from the browser**
-     
-    ![1](/Images/4/6.PNG) 
+    ---
 
-    PATH File: **Flag1**
-
-    ![2](/Images/4/7.PNG)        
-     
-    **PHPMAILER version**
-
-    ![4](/Images/4/9.PNG)    
+    **Vendor Directory Index view from the browser** | PATH File: **Flag1** | **PHPMAILER version**
+     ---|---|---
+    ![1](/Images/4/6.PNG) | ![2](/Images/4/7.PNG) | ![4](/Images/4/9.PNG)    
 
 ---
+
+**flag2:**  `flag2{6a8ed560f0b5358ecf844108048eb337}`
+
+**flag3:**  `flag3{a0f568aa9de277887f37730d71520d9b}`
 
 - **CVE-2016-10033** Remote Code Execution Vulnerability in PHPMailer
 
