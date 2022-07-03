@@ -150,13 +150,15 @@ Tools:
 
     ![17](/Images/4/17.PNG)
 
-21. Look for flags.
+20. Look for flags.
 
         find /var/www -type f -iname 'flag*'
 
+    **flag2 and flag3.**
+
     ![18](/Images/4/18.PNG)
 
-22. Open the file.
+21. Open the file.
 
         cat /var/www/flag2.txt
 
@@ -164,15 +166,7 @@ Tools:
 
     ![19](/Images/4/19.PNG)
 
-23. Search for others flags.
-
-        find -type f -iname '*flag*'
-
-    **The "./" previous "WordPress" means the file is active on WordPress.**
-
-    ![20](/Images/4/20.PNG)
-
-24. Insert the path on the browser.
+23. Insert the path for flag 3 in the browser.
 
         http://192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png
 
