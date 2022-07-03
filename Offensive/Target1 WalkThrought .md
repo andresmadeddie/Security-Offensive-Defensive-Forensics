@@ -218,6 +218,45 @@ Tools:
 
     ![21](/Images/2/21.png)
 
+***
+
+# Alternative methods to access flag 3 and 4.
+
+## Binary File: **Flag 3**
+
+1. Needs to be Root
+2. In the directory:  /var/lib/mysql 
+
+    ```
+    grep -r flag3 *
+    nano lib_logfile0
+    ctrl w flag3
+    ```
+
+**Flag3**
+
+![12](/Images/1/12.png)
+
+## SQL database: **Flag 3 and 4**
+
+```
+mysql -u root -p
+mysql> show databases;
+mysql> use wordpress;
+mysql> show tables;
+mysql> select * from wp_posts;
+```
+
+  **Flag3 and Flag4**
+ 
+![11](/Images/1/11.png)
+
+
+> Others Exploits:
+CVE-2014-6271 Shellshock vulnerability. It is possible to gain shell access through Remote code execution.
+
+***
+
 # FLAGS
 
 flag1{b9bbcb33e11b80be759c4e844862482d}

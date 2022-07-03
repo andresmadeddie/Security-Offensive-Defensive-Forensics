@@ -37,7 +37,7 @@ Vulnerability | Description | Impact
 
 The Red Team was able to penetrate Target1 and retrieve the following confidential data:
 
-**flag1:**  `flag1{b9bbcb33e11b80be759c4e844862482d}`
+**flag1.txt:**  `b9bbcb33e11b80be759c4e844862482d`
 
 - **CWE-200** Exposure of sensitive Information to an unauthorized actor
     
@@ -51,7 +51,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
 ---
 
-**flag2:** `flag2{fc3fd58dcdad9ab23faca6e9a36e581c}`
+**flag2.txt:** `fc3fd58dcdad9ab23faca6e9a36e581c`
 
 - **CWE-521:** Weak Password Requirements
 
@@ -73,7 +73,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
 ---
 
-**flag3:**  `flag3{afc01ab56b50591e7dccf93122770cd2}`
+**flag3.txt:**  `afc01ab56b50591e7dccf93122770cd2`
 
 - **CWE-284** Server does not properly restrict access to a resource
 
@@ -101,11 +101,11 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
     ![11](/Images/1/11.png)  
 
-    >#### note: Flags 3 and 4 can be found in different ways. Look at the end of this report for alternative methods to find Flag3.
+    >#### note: Flag4 also appears in this exploit.
 
 ---
 
-**flag4:**  `flag4{715dea6c055b9fe3337544932f2941ce}`
+**flag4.txt:**  `715dea6c055b9fe3337544932f2941ce`
 
 - **CWE-284** Improper Access Control
 
@@ -135,41 +135,3 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
         **Flag4**
 
         ![10](/Images/1/10.png)
-
-***
-
-# Alternative methods to access flag 3 and 4
-
-## Binary File: **Flag 3**
-
-1. Needs to be Root
-2. In the directory:  /var/lib/mysql 
-
-    ```
-    grep -r flag3 *
-    nano lib_logfile0
-    ctrl w flag3
-    ```
-
-**Flag3**
-
-![12](/Images/1/12.png)
-
-## SQL database: **Flag 3 and 4**
-
-```
-mysql -u root -p
-mysql> show databases;
-mysql> use wordpress;
-mysql> show tables;
-mysql> select * from wp_posts;
-```
-
-  **Flag3 and Flag4**
- 
-![11](/Images/1/11.png)
-
-
-
-> Others Exploits:
-CVE-2014-6271 Shellshock vulnerability. It is possible to gain shell access through Remote code execution.

