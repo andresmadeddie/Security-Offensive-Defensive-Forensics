@@ -8,7 +8,7 @@ To start, your team needs to confirm that newly created alerts are working. Once
 
 You will then report back all your findings to both the SOC manager and the Engineering Manager with appropriate analysis.
 
->##### Note: This is a walkthrough detailing one method to exploit the vulnerable machine. Likewise, other techniques have been explored. Look at the PowerPoint presentation and the Penetration Testing Report Target 2 to find more methods not specified in this walkthrough.
+>##### Note: This is a walkthrough detailing one method to exploit the vulnerable machine. Likewise, other techniques have been explored. Look at the PowerPoint presentation to find more methods not specified in this walkthrough.
 
 ---
 
@@ -172,7 +172,7 @@ Tools:
 
     **flag3**
     
-    ![21](/Images/4/21.PNG)
+    ![20](/Images/4/20.PNG)
 
 # FLAGS
 
