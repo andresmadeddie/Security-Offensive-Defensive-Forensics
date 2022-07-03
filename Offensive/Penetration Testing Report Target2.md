@@ -81,6 +81,6 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
     20. Sensitive information was found in the "www" and "WordPress uploads" directory    
 
-        ![18](/Images/4/18.PNG)
+        ![19](/Images/4/19.PNG)
 
-        ![15](/Images/1/15.png)
+        ![20](/Images/4/20.png)
