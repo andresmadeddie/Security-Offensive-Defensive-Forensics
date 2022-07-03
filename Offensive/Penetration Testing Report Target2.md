@@ -26,7 +26,6 @@ The CVE and CWE databases give us information of vulnerabilities found in the pr
 
 Vulnerability | Description | Impact
 ---|---|---
-**CWE-200** Exposure of sensitive Information to an unauthorized actor | The product exposes sensitive Information to an actor that is not explicitly authorized to have access | Allowing sensitive information to be compromised so easily can result in a breach that can have significant effects on your business
 **CWE-548** Exposure of information through directory browsing | A directory listing is inappropriately exposed, yielding potentially sensitive information to attackers | Allowing an bad actor to obtain more information about your server could allow them to further their attack
 **CVE-2016-10033** Remote Code Execution Vulnerability in PHPMailer | HPMailer allows extra parameters in the mail command and consequently executes arbitrary code | An attacker can execute commands on the web server remotely  allowing them to further compromise the target.
 
@@ -38,9 +37,11 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
 **flag1:**  `flag1{a2c1f66d28051bd3a5874b5b6r43e21}`
 
-- **CWE-200** Exposure of sensitive Information to an unauthorized actor
+- **CWE-548** Exposure of information through directory browsing
     
-    Sensitive information was accessed without authorization. The vendor directory has no access restrictions and is accessible through the browser. It includes several sensitive files that leak information about the services in use, their versions, and the critical data `flag1{a2c1f66d28051bd3a5874b5b6r43e21}` in the PATH file.
+    Sensitive information was accessed without authorization through directory browsing. 
+    
+    The vendor directory has no restrictions and is accessible through the browser. It includes several sensitive files that leak information about the services in use, their versions, and the critical data `flag1{a2c1f66d28051bd3a5874b5b6r43e21}` in the PATH file.
 
     **Vendor Directory Index view from the browser**
      
@@ -56,7 +57,9 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
 ---
 
-**CWE-548** Exposure of information through directory browsing
+**CVE-2016-10033** Remote Code Execution Vulnerability in PHPMailer
+
+    The current version of PHPMailer in use (5.2.16) is vulnerable. It allows extra parameters in the mail command and consequently executes arbitrary code. Therefore, the exploited machine can establish stealthy communication with a threat actor through a reverse shell that will bypass the inbound rules of a firewall.
 
 
     ![7](/Images/4/7.PNG)  
