@@ -12,7 +12,7 @@
 
 ## Exposed Services
 
-Nmap scan results for each machine reveal the below services and OS details:
+Nmap scan results reveals the below services and OS details:
 
 nmap -sV 192.168.1.115
 
@@ -40,27 +40,24 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
 - **CWE-200** Exposure of sensitive Information to an unauthorized actor
     
-    1. `nikto -C all -h 192.168.1.115`
+    Sensitive information was accessed without authorization. The vendor directory has no access restrictions and is accessible through the browser. It includes several sensitive files that leak information about the services in use, their versions, and the critical data `flag1{a2c1f66d28051bd3a5874b5b6r43e21}` in the PATH file.
 
-        ![2](/Images/4/2.PNG)
-
-    2. `gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -e -u http://192.168.1.115`
-    
-        ![3](/Images/4/3.PNG)
-    
-    3. Important Files Discovered
+    **Vendor Directory Index view from the browser**
      
-        ![4](/Images/4/4.PNG)     
-          
-     **Flag1**
+    ![1](/Images/4/6.PNG) 
 
-    ![5](/Images/4/5.PNG)
+    PATH File: **Flag1**
 
-    **List of vulnerabilities**
+    ![2](/Images/4/7.PNG)        
+     
+    **PHPMAILER version**
 
-    ![6](/Images/4/6.PNG)    
+    ![4](/Images/4/9.PNG)    
 
-    **phpmailer version**
+---
+
+**CWE-548** Exposure of information through directory browsing
+
 
     ![7](/Images/4/7.PNG)  
 

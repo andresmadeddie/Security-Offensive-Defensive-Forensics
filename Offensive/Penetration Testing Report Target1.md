@@ -12,7 +12,7 @@
 
 ## Exposed Services
 
-Nmap scan results for each machine reveal the below services and OS details:
+Nmap scan results reveals the below services and OS details:
 
 nmap -sV 192.168.1.110
 
@@ -35,7 +35,7 @@ Vulnerability | Description | Impact
 
 ## Exploitation
 
-The Red Team was able to penetrate Target 1 and retrieve the following confidential data:
+The Red Team was able to penetrate Target1 and retrieve the following confidential data:
 
 **flag1:**  `flag1{b9bbcb33e11b80be759c4e844862482d}`
 
@@ -110,32 +110,7 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
 - **CWE-284** Improper Access Control
 
     Privilege on the system is obtained in this step after cracking the hashed password of a privileged user found in the SQL database. This allows to execute a Python Script that leads to a root access to the system.
-
-- **CRACKING THE HASH PASSWORD**
-
-    Exploit:
-
-    1. In the sql database run: 
-
-        ```
-        mysql> show databases;
-        mysql> use wordpress;
-        mysql> show tables;
-        mysql> SELECT* FROM wp_users;
-        ```
-
-        ![5](/Images/1/5.png)
-
-    2. Create a file with the hashes and usernames in john the ripper format
-
-        ![6](/Images/1/6.png)
-        
-            John hashes.txt -wordlist=’usr.share/wordlist/rockyou.txt’
-        
-        ![7](/Images/1/7.png)
-    
-- **PRIVILEGE ESCALATION USING A PYTHON SCRIPT**
-    
+  
     The user Steven has python root access. This led to a root privilege escalation.
 
     Exploit:
