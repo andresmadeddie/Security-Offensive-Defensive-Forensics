@@ -158,7 +158,7 @@ Tools:
 
     ![18](/Images/4/18.PNG)
 
-21. Open the file.
+21. Open the flag2 file.
 
         cat /var/www/flag2.txt
 
