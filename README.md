@@ -1,8 +1,55 @@
 # About this Project
 
-The pen-testing environment was set through a hypervisor inside a Windows Virtual Machine running in Azure Lab Services.  All the processes of Offense, Defense, and Forensic were developed individually. The final PowerPoint presentation and subsequent exposition were worked as a group.
+> Note: The pen-testing environment was set through a hypervisor inside a Windows Virtual Machine running in Azure Lab Services.  All the processes of Offense, Defense, and Forensic were developed individually. The final PowerPoint presentation and subsequent exposition were worked as a group.
+
+***
+
+## Table of Contents
+
+1. Content of the project: Enumeration of documents in this repository
+
+2. The Narrative behind the project
+
+3. Recreate the PenTest Lab
+
+***
+
+## 1. Content of the project
+
+- The project consists of three parts:
+
+    - Defensive Security: Implement alerts and thresholds in Kibana.
+    - Offensive Security: Assess a vulnerable VM and verify that the Kibana rules work as expected.
+    - Network Forensics: Analyze live malicious traffic
+
+- Descriptions of the folders and files
+
+    - **POWER POINT PRESENTATION:**  It is the summary of the project focusing on a Red Team perspective.    
+
+    - **REPORTS Folder:** It holds the reports of the defensive, offensive, and forensic analyses. 
+
+    - **WALKTHROUGH folder:** It is a detailed step-by-step to discover and exploit the vulnerabilities of targe1 and target2. 
+
+***
+
+## 2. The Narrative behind the project
+
+You are working as a Security Engineer for X-CORP, supporting the SOC infrastructure. SOC analysts have noticed some discrepancies with the alerts in the Kibana system, so the manager asked the Security Engineering team to investigate.
+
+First, your team needs to set up new alerts in Kibana. Penetration testing will then be performed to test alerts for vulnerabilities. Finally, the security team requested live traffic monitoring on the cable to detect any anomalies not reflected in the alert system. They have evidence that there are people misusing the network. Specifically, they have received reports on:
+
+- Time thieves
+- Infected Machine
+- Illegal Downloads.
+
+You should report your findings to the SOC manager and engineering manager with the appropriate analysis.
+
+***
+
+## 3. Recreate the PenTest Lab
 
 This Pen-testing environment can be recreated in Virtual Box using the following tools:
+
 - [Kali Linux .ova file](https://kali.download/virtual-images/kali-2022.2/kali-linux-2022.2-virtualbox-amd64.ova)
 
 - [Raven 1 .ova file](https://download.vulnhub.com/raven/Raven.ova)
@@ -46,13 +93,15 @@ Then, type:
 
 To set the machines with the same IP address as this exercise:
 
-- Raven 1: 192.168.1.110 
-- Raven 2: 192.168.1.115
+- target1: 192.168.1.110 
+- target2: 192.168.1.115
 
 Modify the next payloads and run them in the same place path the DHCP server was set.
 
-Raven 1: `vboxmanage dhcpserver modify --network=Raven --mac-address=080027BBBDB1 --fixed-address=192.168.1.110`
+target1: `vboxmanage dhcpserver modify --network=Raven --mac-address=080027BBBDB1 --fixed-address=192.168.1.110`
 
-Raven 2: `vboxmanage dhcpserver modify --network=Raven --mac-address=080027FABB89 --fixed-address=192.168.1.115`
+target2: `vboxmanage dhcpserver modify --network=Raven --mac-address=080027FABB89 --fixed-address=192.168.1.115`
 
-Search for the Mac address of the each Raven machine in their respective setting on virtual box and then proceed to modify the Mac address of the sript  with the ones of your machines. (--mac-address="Raven Machine Mac Address)
+kali: `vboxmanage dhcpserver modify --network=Raven --mac-address=080027DB966A --fixed-address=192.168.1.90`
+
+> Search for the **Mac address** of each machine in their respective setting on the virtual box and then proceed to modify the Mac address on the script with the ones of your machines. (--mac-address="Raven Machine Mac Address)

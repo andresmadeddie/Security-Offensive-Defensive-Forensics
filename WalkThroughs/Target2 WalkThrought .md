@@ -6,7 +6,7 @@ You are working as a Security Engineer for X-CORP, supporting the SOC infrastruc
 
 To start, your team needs to confirm that newly created alerts are working. Once the alerts are verified to be working, you will monitor live traffic on the wire to detect any abnormalities that aren't reflected in the alerting system.
 
-You will then report back all your findings to both the SOC manager and the Engineering Manager with appropriate analysis.
+You must report your findings to the SOC manager and the engineering manager with appropriate analysis.
 
 >##### Note: This walkthrough detail one method to exploit the vulnerable machine. There are several alternatives to explore.
 
