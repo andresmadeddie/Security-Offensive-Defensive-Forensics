@@ -56,7 +56,7 @@ Tools:
 
         gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -e -u http://192.168.1.115
 
-    ![5](/Resources/Images/2/5.PNG)
+    ![5](/Resources/Images/2/5.png)
 
 6. Explore path `192.168.1.115/vendor/` using the browser.
    
@@ -70,25 +70,25 @@ Tools:
 
     **flag1**
 
-    ![7](/Resources/Images/2/7.PNG)
+    ![7](/Resources/Images/2/7.png)
 
 8. Double "Click SECURITY.md".
 
     **It reveals vulnerable versions of PHPMAILER.**
 
-    ![8](/Resources/Images/2/8.PNG)    
+    ![8](/Resources/Images/2/8.png)    
 
 9.  Double "Click VERSION".
 
     **It reveals the PHPMAILER version in use.**
 
-    ![9](/Resources/Images/2/9.PNG)  
+    ![9](/Resources/Images/2/9.png)  
 
 10. Search for scripts to exploit PHPMAILER with Searchsploit.
 
         searchsploit phpmailer
 
-    ![10](/Resources/Images/2/10.PNG)  
+    ![10](/Resources/Images/2/10.png)  
 
 11. A glance at script 40968.sh
 
@@ -96,13 +96,13 @@ Tools:
 
     **Press "q" keyboard to quit view.**
 
-    ![11](/Resources/Images/2/11.PNG) 
+    ![11](/Resources/Images/2/11.png) 
 
 12. Download the script to the current folder.
 
         searchsploit phpmailer -m php/webapps/40968.sh
 
-    ![12](/Resources/Images/2/12.PNG)
+    ![12](/Resources/Images/2/12.png)
 
 13. Authorize file to execute.
 
@@ -112,7 +112,7 @@ Tools:
 
         ./40968.sh 192.168.1.115
 
-    ![13](/Resources/Images/2/13.PNG)
+    ![13](/Resources/Images/2/13.png)
 
     > Note: PHPMAILER can be exploited. Nevertheless,  the shell from this script does not allow us to do much. After researching, "exploit.sh" was discovered. It allows for creating a more useful shell.
 
@@ -124,7 +124,7 @@ Tools:
 
     ##### Note: **To exit nano: "CTRL X", then "y" and "enter".**
 
-    ![14](/Resources/Images/2/14.PNG)
+    ![14](/Resources/Images/2/14.png)
 
 16. Authorize file to execute.
 
@@ -134,13 +134,13 @@ Tools:
 
         ./exploit.sh
 
-    ![15](/Resources/Images/2/15.PNG)
+    ![15](/Resources/Images/2/15.png)
 
 18. Set Kali Linux Machine to listen using the NetCat command.
 
          nc -lnvp 4444
 
-    ![16](/Resources/Images/2/16.PNG)
+    ![16](/Resources/Images/2/16.png)
 
 19. Make Target2 call the Kali Linux machine with the NetCat command embedded in the next payload after running it in the browser.
 
@@ -148,7 +148,7 @@ Tools:
 
     **Change the second IP address in the payload to the IP address of your own kali Linux machine.**
 
-    ![17](/Resources/Images/2/17.PNG)
+    ![17](/Resources/Images/2/17.png)
 
 20. Look for flags.
 
@@ -156,7 +156,7 @@ Tools:
 
     **flag2 and flag3.**
 
-    ![18](/Resources/Images/2/18.PNG)
+    ![18](/Resources/Images/2/18.png)
 
 21. Open the flag2 file.
 
@@ -164,7 +164,7 @@ Tools:
 
     **flag2**
 
-    ![19](/Resources/Images/2/19.PNG)
+    ![19](/Resources/Images/2/19.png)
 
 23. Insert the path for flag 3 in the browser.
 
@@ -172,7 +172,7 @@ Tools:
 
     **flag3**
     
-    ![20](/Resources/Images/2/20.PNG)
+    ![20](/Resources/Images/2/20.png)
 
 # FLAGS
 

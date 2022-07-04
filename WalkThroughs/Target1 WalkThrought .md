@@ -8,7 +8,7 @@ To start, your team needs to confirm that newly created alerts are working. Once
 
 You must report your findings to the SOC manager and the engineering manager with appropriate analysis.
 
->##### Note: This is a walkthrough detailing one method to exploit the vulnerable machine. Likewise, other techniques have been explored. Look at the end of this walkthrough (Grep) or the PowerPoint presentation (LFI) to find different approaches.
+>##### Note: This is a walkthrough detailing one method to exploit the vulnerable machine. Likewise, other techniques have been explored. Look at the end of this walkthrough (Grep) or the presentation (LFI) to find different approaches.
 
 ---
 

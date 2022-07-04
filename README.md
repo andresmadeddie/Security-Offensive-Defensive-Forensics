@@ -1,6 +1,6 @@
 # About this Project
 
-> Note: The pen-testing environment was set through a hypervisor inside a Windows Virtual Machine running in Azure Lab Services.  All the processes of Offense, Defense, and Forensic were developed individually. The final PowerPoint presentation and subsequent exposition were worked as a group.
+> Note: The pen-testing environment was set through a hypervisor inside a Windows Virtual Machine running in Azure Lab Services.  All the processes of Offense, Defense, and Forensic were developed individually. The final presentation and subsequent exposition were worked as a group.
 
 ***
 
@@ -24,7 +24,7 @@
 
 - Descriptions of the folders and files
 
-    - **POWER POINT PRESENTATION:**  It is the summary of the project focusing on a Red Team perspective.    
+    - **PRESENTATION File:**  It is the summary of the project focusing on a Red Team perspective.    
 
     - **REPORTS Folder:** It holds the reports of the defensive, offensive, and forensic analyses. 
 
