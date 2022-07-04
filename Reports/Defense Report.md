@@ -71,7 +71,7 @@ Attacks were detected on IP address 192.168.1.110 (Target1), and  IP address 192
 
 Target1 is an Apache web server with SSH enabled, so ports 80 and 22 are possible gates of entry for attackers. 
 
-Target 2 is a copy of Target 1 but with an increased security. So it has the same points for entry through port 22 and 80.
+Target 2 is similar to Target 1. Ports 22 and 80 are open.
 
 ***
 
@@ -83,7 +83,7 @@ Traffic to these services should be carefully monitored. To this end, we have im
 
     It is implemented as follows:
 
-    - **Metric:** Packetbeat: 'WHEN count() GROUPED OVER top 5 'http.response.status_code' IS ABOVE 400 FOR THE LAST 5 minutes'.
+    - **Metric:** Packetbeat: `WHEN count() GROUPED OVER top 5 'http.response.status_code' IS ABOVE 400 FOR THE LAST 5 minutes`.
 
     - **Threshold:** When a grouped status code with values over 400 are in the top 5 within 5 minutes.
 
@@ -99,7 +99,7 @@ Traffic to these services should be carefully monitored. To this end, we have im
 
     It  is implemented as follows:
 
-    - **Metric:** Packetbeat: 'WHEN sum() of http.request.bytes OVER all documents IS ABOVE 3500 FOR THE LAST 1 minute'.
+    - **Metric:** Packetbeat: `WHEN sum() of http.request.bytes OVER all documents IS ABOVE 3500 FOR THE LAST 1 minute`.
 
     - **Threshold:** More than 3500 bytes in a minute.
 
@@ -113,7 +113,7 @@ Traffic to these services should be carefully monitored. To this end, we have im
 
     It is implemented as follows:
 
-    - **Metric:** Metricbeat: 'WHEN max() OF system.process.cpu.total.pct OVER all documents IS ABOVE 0.5 FOR THE LAST 5 minutes'.
+    - **Metric:** Metricbeat: `WHEN max() OF system.process.cpu.total.pct OVER all documents IS ABOVE 0.5 FOR THE LAST 5 minutes`.
 
     - **Threshold:** When the CPU usage goes over 0.5 in five minutes
 
