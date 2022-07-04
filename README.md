@@ -8,9 +8,11 @@
 
 1. Content of the project: Enumeration of documents in this repository
 
-2. The Narrative behind the project
+2. Tools used in the project
 
-3. Recreate the PenTest Lab
+3. The Narrative behind the project
+
+4. Recreate the PenTest Lab
 
 ***
 
@@ -32,7 +34,39 @@
 
 ***
 
-## 2. The Narrative behind the project
+## 2. Tools used in the project
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|- Wireshark |  - Tcpreplay | - Kali Linux | - Q shell |
+| - Namp | - Nikto | - Gobuster | - FireFox Browser | 
+|- Searchsploit | - Bash Script | - NetCat | - Wpscan |
+| - Google Chrome Browser | - Google Developers Tool | - SSH | - Bash Commands|
+| - Mysql | - John the Ripper | - Python Script |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+## 3. The Narrative behind the project
 
 You are working as a Security Engineer for X-CORP, supporting the SOC infrastructure. SOC analysts have noticed some discrepancies with the alerts in the Kibana system, so the manager asked the Security Engineering team to investigate.
 
@@ -46,7 +80,7 @@ You should report your findings to the SOC manager and engineering manager with 
 
 ***
 
-## 3. Recreate the PenTest Lab
+## 4. Recreate the PenTest Lab
 
 This Pen-testing environment can be recreated in Virtual Box using the following tools:
 
