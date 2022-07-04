@@ -87,7 +87,7 @@ For windows type:
 
 Then, type:
 
-    vboxmanage dhcpserver add --network=pentest --server-ip=192.168.1.1 --lower-ip=192.168.1.100 --upper-ip=192.168.1.120 --netmask=255.255.255.0 --enable 
+    vboxmanage dhcpserver add --network=pentest --server-ip=192.168.1.1 --lower-ip=192.168.1.80 --upper-ip=192.168.1.120 --netmask=255.255.255.0 --enable 
     
 ### **Optional** 
 
@@ -95,6 +95,7 @@ To set the machines with the same IP address as this exercise:
 
 - target1: 192.168.1.110 
 - target2: 192.168.1.115
+- kali: 192.168.90
 
 Modify the next payloads and run them in the same place path the DHCP server was set.
 
