@@ -153,7 +153,7 @@ The CVE and CWE databases give us information on vulnerabilities found in the pr
 
         **Vendor Directory Index view from the browser** | PATH File: **Flag1** | **PHPMAILER version**
         ---|---|---
-        ![6](/Resources/Images/2/6.PNG) | ![7](/Resources/Images/2/7.PNG) | ![9](/Resources/Images/2/9.PNG)    
+        ![6](/Resources/Images/2/6.PNG) | ![7](/Resources/Images/2/7.png) | ![9](/Resources/Images/2/9.png)    
 
     ---
 
