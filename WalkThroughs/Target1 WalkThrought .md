@@ -34,13 +34,13 @@ Tools:
 
         ifconfig
 
-    ![1](/Resources/Images/1/1.PNG)
+    ![1](/Resources/Images/1/1.png)
 
 2. Network FootPrinting (find machines on the network).
 
         nmap 192.168.1.0/24
 
-    ![2](/Resources/Images/1/2.PNG)
+    ![2](/Resources/Images/1/2.png)
 
 3. Target1 fingerprinting (find services and ports on target1). 
 
@@ -54,7 +54,7 @@ Tools:
 
     **Likewise, the usernames are easy to guess because of the leads on the website.**
 
-    ![4](/Resources/Images/1/4.PNG)
+    ![4](/Resources/Images/1/4.png)
 
 5. Find the flag inside the code with the google developers tool.
 
