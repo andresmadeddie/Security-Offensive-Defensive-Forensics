@@ -42,7 +42,7 @@
 | - Namp | - Nikto | - Gobuster | - FireFox Browser | 
 |- Searchsploit | - Bash Script | - NetCat | - Wpscan |
 | - Google Chrome Browser | - Google Developers Tool | - SSH | - Bash Commands|
-| - Mysql | - John the Ripper | - Python Script |
+| - Mysql | - John the Ripper | - Python Script | - Kibana
 
 
 
