@@ -1,4 +1,6 @@
-# About this Project
+# Security Offensive Defensive Forensics
+
+## About this Project
 
 > Note: The pen-testing environment was set through a hypervisor inside a Windows Virtual Machine running in Azure Lab Services.  All the processes of Offense, Defense, and Forensic were developed individually. The final presentation and subsequent exposition were worked as a group.
 
@@ -26,11 +28,11 @@
 
 - Descriptions of the folders and files
 
-    - **PRESENTATION File:**  It is the summary of the project focusing on a Red Team perspective.    
+    - **[PRESENTATION File](Presentation.pdf):** It is the summary of the project focusing on a Red Team perspective.    
 
-    - **REPORTS Folder:** It holds the reports of the defensive, offensive, and forensic analyses. 
+    - **[REPORTS Folder](/Reports/):** It holds the reports of the defensive, offensive, and forensic analyses. 
 
-    - **WALKTHROUGH folder:** It is a detailed step-by-step to discover and exploit the vulnerabilities of targe1 and target2. 
+    - **[WALKTHROUGH Folder](/WalkThroughs/):** It is a detailed step-by-step to discover and exploit the vulnerabilities of targe1 and target2. 
 
 ***
 
@@ -43,26 +45,6 @@
 |- Searchsploit | - Bash Script | - NetCat | - Wpscan |
 | - Google Chrome Browser | - Google Developers Tool | - SSH | - Bash Commands|
 | - Mysql | - John the Ripper | - Python Script | - Kibana
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ***
 
