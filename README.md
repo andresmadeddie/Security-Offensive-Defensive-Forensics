@@ -1,6 +1,6 @@
 # Security Offensive Defensive Forensics
 
-## About this Project
+# About this Project
 
 > Note: The pen-testing environment was set through a hypervisor inside a Windows Virtual Machine running in Azure Lab Services.  All the processes of Offense, Defense, and Forensic were developed individually. The final presentation and subsequent exposition were worked as a group.
 
