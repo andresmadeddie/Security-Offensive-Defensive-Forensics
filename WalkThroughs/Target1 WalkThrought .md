@@ -16,7 +16,7 @@ Tools:
 
 - Kali Linux
 - Q shell
-- Namp
+- Nmap
 - Wpscan
 - Google Chrome Browser
 - Google Developers Tool
